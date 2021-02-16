@@ -34,8 +34,8 @@ body {
 <body>
 <a href="https://archi-graphi.fr/" target="_blank" style="position:absolute; background:rgba(255,255,255,.5);padding:5px;z-index: 10;color: #fff;">实际应用地址演示</a>
 <div id="px-render"></div>
-<script src="https://www.tweenmax.com.cn/cool/archi/js/TweenMax.min.js"></script> 
-<script src="https://www.tweenmax.com.cn/cool/LiquidDistortion/js/pixi.min.js"></script> <!--www.tweenmax.com.cn-->
+<script src="js/pixi.min.js"></script> 
+<script src="js/TweenMax.min.js"></script> <!--www.tweenmax.com.cn-->
 <script>
         var option = {
             width: 1652,
@@ -88,12 +88,11 @@ body {
                 y: e.clientY,
                 ease: Sine.easeOut,
                 onUpdate: function (param1) {
-                  stage.filters = [displacementFilter];
-                  displacementSprite.position.set((move.x -  cmWidth) * velocity * 0.5, (move.y - cmHeight) * velocity * 0.5)
-                  
-                  preview.position.set((move.x -  cmWidth) * velocity * 0.5, (move.y - cmHeight) * velocity * 0.5)
-
-                  displacementFilter.scale.set(-(move.x -  cmWidth) * velocity, -(move.y - cmHeight) * velocity);
+					stage.filters = [displacementFilter];
+					displacementSprite.position.set((move.x -  cmWidth) * velocity * 0.5, (move.y - cmHeight) * velocity * 0.5)
+					preview.position.set((move.x -  cmWidth) * velocity * 0.5, (move.y - cmHeight) * velocity * 0.5)
+					
+					displacementFilter.scale.set(-(move.x -  cmWidth) * velocity, -(move.y - cmHeight) * velocity);
 					
                 },
             });

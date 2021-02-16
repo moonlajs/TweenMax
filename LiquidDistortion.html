@@ -33,22 +33,6 @@
 			</symbol>
 		</svg>
 
-		<script >
-
-
-	setTimeout(() => document.body.classList.add('render'), 60);
-	const navdemos = Array.from(document.querySelectorAll('nav.demos > .demo'));
-	const total = navdemos.length;
-	const current = navdemos.findIndex(el => el.classList.contains('demo--current'));
-	const navigate = (linkEl) => {
-		document.body.classList.remove('render');
-		document.body.addEventListener('transitionend', () => window.location = linkEl.href);
-	};
-	navdemos.forEach(link => link.addEventListener('click', (ev) => {
-		ev.preventDefault();
-		navigate(ev.target);
-	}));
-	
 
 
     
@@ -60,21 +44,11 @@
 		<script>
 			imagesLoaded(document.body, () => document.body.classList.remove('loading'));
 			
-			var spriteImages = document.querySelectorAll( '.slide-item__image' );
-			var spriteImagesSrc = [];
+			
+			var spriteImagesSrc = ['img/1.jpg'];
 			var texts = [];
 
-			for ( var i = 0; i < spriteImages.length; i++ ) {
-				var img = spriteImages[i];
-				// Set the texts you want to display to each slide 
-				// in a sibling element of your image and edit accordingly
-				if ( img.nextElementSibling ) {
-					texts.push(img.nextElementSibling.innerHTML);
-				} else {
-					texts.push('');
-				}
-				spriteImagesSrc.push( img.getAttribute('src' ) );
-			}
+			
       
 			var initCanvasSlideshow = new CanvasSlideshow({
 				sprites: spriteImagesSrc,

@@ -6,26 +6,26 @@
         
         <style type="text/css">
             .garden {
-  position: relative;
-  width : 200px;
-  height: 200px;
-  border: 5px solid #CCC;
-  border-radius: 10px;
-}
+			  position: relative;
+			  width : 200px;
+			  height: 200px;
+			  border: 5px solid #CCC;
+			  border-radius: 10px;
+			}
 
-.ball {
-  position: absolute;
-  top   : 90px;
-  left  : 90px;
-  width : 20px;
-  height: 20px;
-  background: green;
-  border-radius: 100%;
-}
+			.ball {
+			  position: absolute;
+			  top   : 90px;
+			  left  : 90px;
+			  width : 20px;
+			  height: 20px;
+			  background: green;
+			  border-radius: 100%;
+			}
 
         </style>
         
-        <title>Detecting device orientation - Orientation_example - code sample</title>
+        <title>device ball</title>
     </head>
     <body>
         
@@ -34,7 +34,7 @@
 </div>
 
 <pre class="output"></pre>
-
+  <div id="result"></div>
         
         
             <script>
@@ -75,6 +75,7 @@ function handleOrientation(event) {
 }
 
 window.addEventListener('deviceorientation', handleOrientation);
+document.getElementById("result").innerHTML = window.DeviceOrientationEvent;
 
             </script>
         

@@ -89,6 +89,7 @@ img,
 		</style>
 	</head>
 	<body>
+	<pre class="output"></pre>
 <div class="container">
     <img class="background" src="https://www.tweenmax.com.cn/cool/howls/howls/background.jpg">
 
@@ -177,7 +178,7 @@ img,
 	
 	
 	
-	var speed = 0.9;
+var speed = 0.9;
 var WIDTH;
 var HEIGHT;
 var castleWidth;
@@ -191,6 +192,7 @@ var progress = 0.0;
 var _castleContainer = document.getElementsByClassName('castle-container')
 var _castle = document.getElementsByClassName('castle')
 var _controltoggle = document.getElementsByClassName('control-toggle')
+var output = document.querySelector('.output');
 var resize = function() {
     WIDTH = window.innerWidth;
     HEIGHT = window.innerHeight;
@@ -211,9 +213,8 @@ resize();
 //$(window).on('resize', resize);
 window.onresize  = resize
 
-window.addEventListener('deviceorientation', handle);
- //document.onmousemove =
- function handle(event) {  
+
+function handleOrientation(event) {  
    //if (!control) return;
   var z = event.alpha;  //[0,360]
   var x = event.beta;  // In degree in the range [-180,180)
@@ -228,7 +229,14 @@ window.addEventListener('deviceorientation', handle);
     tl3.timeScale(speed);
     tl4.timeScale(speed);
     tl5.timeScale(speed);
+	  
+  output.textContent  = `alpha : ${z}\n`;
+  output.textContent  = `beta : ${x}\n`;
+  output.textContent += `gamma: ${y}\n`;
 }
+window.addEventListener('deviceorientation', handleOrientation);
+ //document.onmousemove =
+ 
 
 var draw = function() {
     requestAnimationFrame(draw);

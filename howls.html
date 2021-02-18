@@ -2,7 +2,7 @@
 <html lang="en">
 	<head>
 		<meta charset="utf-8">
-		<title>howls</title>
+		<title>TweenMax demon</title>
         <script src="https://www.tweenmax.com.cn/cool/ek7000/js/TweenMax.min.js"></script> 
        
         <!--tweenmax中文网演示实例 www.tweenmax.com.cn-->
@@ -203,9 +203,9 @@ var resize = function() {
 	w = +w;
 	castleWidth = w* scale;
 	
-    TweenLite.set(_castle, {scale: scale * 0.85});//缩小城堡尺寸
-	TweenLite.set(_castleContainer, {x: -220, 
-	y: -200})
+    TweenLite.set(_castle, {scale: scale * 0.45});//缩小城堡尺寸
+	TweenLite.set(_castleContainer, {x: -520, 
+	y: -360})
 };
 resize();
 //$(window).on('resize', resize);
@@ -213,9 +213,8 @@ window.onresize  = resize
 
 
 
-
  document.onmousemove = function (e) {
-   if (!control) return;
+   //if (!control) return;
 
     speed = (1 - (e.clientX / WIDTH) * 2) * 2;
     

@@ -8,7 +8,7 @@
         <!--tweenmax中文网演示实例 www.tweenmax.com.cn-->
 		<!-- Demo styles -->
 		<style>
-	html, body { height: 100%; margin: 0; background: #2294b3; overflow: hidden; }
+	html, body { height: 100%;width: 100%; margin: 0; background: #2294b3; overflow: hidden;     position: relative;}
 
 .container { padding-top: 62.5%; position: absolute; width: 100%; bottom: 0; left: 0; }
 .container.active { cursor: ew-resize; }
@@ -205,7 +205,7 @@ var resize = function() {
 	
     TweenLite.set(_castle, {scale: scale * 0.45});//缩小城堡尺寸
 	TweenLite.set(_castleContainer, {x: -520, 
-	y: -360})
+	y: -300})
 };
 resize();
 //$(window).on('resize', resize);

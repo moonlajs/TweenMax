@@ -213,11 +213,11 @@ window.onresize  = resize
 
 
 
- document.onmousemove = function (e) {
+ document.onmousemove = function (e) {  
    //if (!control) return;
 
     speed = (1 - (e.clientX / WIDTH) * 2) * 2;
-    
+    console.log(e.clientX,speed)
     tl.timeScale(speed);
     tl2.timeScale(speed);
     tl3.timeScale(speed);
@@ -236,7 +236,7 @@ var draw = function() {
    // TweenLite.set(_castleContainer, {x: (1440 * scale + castleWidth) * -progress + castleWidth / 2, 
 	//y: 900 * scale * -(0.36 + progress * 0.35)});
 };
-
+var loadgate = document.getElementsByClassName('load-gate');
 var init = function() {
 		//loading 
     TweenLite.to('.load-gate', 0.5, {opacity: 0, 
@@ -244,18 +244,19 @@ var init = function() {
         //$('.load-gate').remove();
 		//loading 
 
-		var loadgate = document.getElementsByClassName('load-gate');
 		
+			loadgate[0].innerHTML = 'onload'
 		loadgate[0].parentNode.removeChild(loadgate[0]);
     }});
     requestAnimationFrame(draw);
     //cloudIntro();//开场云的处理
 };
 if (document.readyState == 'complete') {
+loadgate[0].innerHTML = 'readyState'
     init();
 } else {
     //$(window).load(init);
-	
+	loadgate[0].innerHTML = 'onload'
 	  window.onload = init
 };
 

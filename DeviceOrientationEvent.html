@@ -6,11 +6,13 @@
 </head>
 
 <body>
-<p>左右：<span id="alpha">0</span>
+
+DeviceOrientationEvent:<p id='DeviceOrientationEvent'></P>
+<p>左右(alpha)(移动设备水平放置时，绕z轴旋转的角度，数值为0度到360度。)：<span id="alpha">0</span>
 </p>
-<p>前后：<span id="beta">0</span>
+<p>前后(beta)(绕X轴旋转的角度，数值为-180度到180度。)：<span id="beta">0</span>
 </p>
-<p>扭转：<span id="gamma">0</span>
+<p>扭转(gamma)(绕Y轴旋转的角度，数值为-90度到90度。)：<span id="gamma">0</span>
 </p>
 <p>指北针指向：<span id="heading">0</span>度</p>
 <p>指北针精度：<span id="accuracy">0</span>度</p>
@@ -29,9 +31,25 @@
 <hr />
 <p>上次收到通知的间隔：<span id="interval">0</span>毫秒</p>
 
+<p>DeviceMotionEventresult：<span id="DeviceMotionEventresult"></span></p>
+<p>DeviceOrientationEventresult：<span id="DeviceOrientationEventresult"></span></p>
 
 <script type="text/javascript">
+
+//deviceorientation 事件对象
+//事件对象包含着每个轴相对于设备静止状态下发生变化的信息。
+
+//设备坐标系的概念：x 轴方向是从左往右，y 轴方向是从下往上，z 轴方向是从后往前。当设备静止放在水平桌面时，这三个值都是 0。
+
+//其中三个主要的属性：
+
+//alpha: 在围绕 z 轴旋转时（即左右旋转时），一个表示设备绕z轴旋转的角度（范围在0-360之间）的数字。
+//beta: 在围绕 x 轴旋转时（即前后旋转时），一个表示设备绕x轴旋转（范围在－180到180之间）的数字，从前到后的方向为正方向。。
+//gamma: 在围绕 y 轴旋转时（即扭转设备时），一个表示设备绕y轴旋转（范围在－90到90之间）的数字，从左向右为正方向。
+
 function orientationHandler(event) {
+
+document.getElementById("DeviceOrientationEventresult").innerHTML = event
 document.getElementById("alpha").innerHTML = event.alpha;
 document.getElementById("beta").innerHTML = event.beta;
 document.getElementById("gamma").innerHTML = event.gamma;
@@ -42,7 +60,8 @@ document.getElementById("accuracy").innerHTML = event.webkitCompassAccuracy;
 
 
 function motionHandler(event) {
-document.getElementById("interval").innerHTML = event.interval;
+document.getElementById("DeviceMotionEventresult").innerHTML = event
+document.09etElementById("interval").innerHTML = event.interval;
 var acc = event.acceleration;
 document.getElementById("x").innerHTML = acc.x;
 document.getElementById("y").innerHTML = acc.y;
@@ -56,13 +75,13 @@ document.getElementById("Ralpha").innerHTML = rotationRate.alpha;
 document.getElementById("Rbeta").innerHTML = rotationRate.beta;
 document.getElementById("Rgamma").innerHTML = rotationRate.gamma;
 }
-
+//DeviceMotionEvent 为web开发者提供了关于设备的位置和方向的改变速度的信息。
 if (window.DeviceMotionEvent) {
 window.addEventListener("devicemotion", motionHandler, false);
 } else {
 document.body.innerHTML = "What user agent u r using???";
 }
-
+//DeviceOrientationEvent提供给网页开发者当设备（指手机，平板等移动设备）在浏览页面时物理旋转的信息。
 if (window.DeviceOrientationEvent) {
 window.addEventListener("deviceorientation", orientationHandler, false);
 } else {
@@ -70,5 +89,6 @@ document.body.innerHTML = "What user agent u r using???";
 };
 </script>
 </body>
+
 
 </html>

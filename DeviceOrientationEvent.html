@@ -8,24 +8,24 @@
 <body>
 
 DeviceOrientationEvent:<p id='DeviceOrientationEvent'></P>
-<p>左右(alpha)(移动设备水平放置时，绕z轴旋转的角度，数值为0度到360度。)：<span id="alpha">0</span>
+<p>左右(event.alpha)(移动设备水平放置时，绕z轴旋转的角度，数值为0度到360度。)：<span id="alpha">0</span>
 </p>
-<p>前后(beta)(绕X轴旋转的角度，数值为-180度到180度。)：<span id="beta">0</span>
+<p>前后(event.beta)(绕X轴旋转的角度，数值为-180度到180度。)：<span id="beta">0</span>
 </p>
-<p>扭转(gamma)(绕Y轴旋转的角度，数值为-90度到90度。)：<span id="gamma">0</span>
+<p>扭转(event.gamma)(绕Y轴旋转的角度，数值为-90度到90度。)：<span id="gamma">0</span>
 </p>
 <p>指北针指向：<span id="heading">0</span>度</p>
 <p>指北针精度：<span id="accuracy">0</span>度</p>
 <hr />
-<p>x轴加速度：<span id="x">0</span>米每二次方秒</p>
+<p>x轴加速度(event.acceleration.x)：<span id="x">0</span>米每二次方秒</p>
 <p>y轴加速度：<span id="y">0</span>米每二次方秒</p>
 <p>z轴加速度：<span id="z">0</span>米每二次方秒</p>
 <hr />
-<p>x轴加速度(考虑重力加速度)：<span id="xg">0</span>米每二次方秒</p>
+<p>x轴加速度(考虑重力加速度)(event.accelerationIncludingGravity.x)：<span id="xg">0</span>米每二次方秒</p>
 <p>y轴加速度(考虑重力加速度)：<span id="yg">0</span>米每二次方秒</p>
 <p>z轴加速度(考虑重力加速度)：<span id="zg">0</span>米每二次方秒</p>
 <hr />
-<p>左右旋转速度：<span id="Ralpha">0</span>度每秒</p>
+<p>左右旋转速度(event.rotationRate.alpha)：<span id="Ralpha">0</span>度每秒</p>
 <p>前后旋转速度：<span id="Rbeta">0</span>度每秒</p>
 <p>扭转速度：<span id="Rgamma">0</span>度每秒</p>
 <hr />

@@ -143,7 +143,7 @@ var castleWidth;
 var scale;
 var control = false;
 
-var progress = 0.0;
+var progress = 0.5;
 var castleContainer = document.getElementsByClassName('castle-container')
 var castle = document.getElementsByClassName('castle')
 var output = document.querySelector('.output');
@@ -188,7 +188,7 @@ function handleOrientation(event) {
     tl3.timeScale(speed);
     tl4.timeScale(speed);
     tl5.timeScale(speed);
-	  
+	  console.log(xx)
   output.textContent = `alpha : ${z}\n`;
   output.textContent += `beta : ${x}\n`;
   output.textContent += `gamma: ${y}\n`;
@@ -199,7 +199,7 @@ window.addEventListener('deviceorientation', handleOrientation);
 var draw = function() {
     requestAnimationFrame(draw);
 
-    progress += 0.00032 * speed;
+    progress += 0.0012 * speed;
     if (progress > 1) progress = 0;
     if (progress < 0) progress = 1;
 

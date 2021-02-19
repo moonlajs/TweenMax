@@ -179,10 +179,10 @@ function handleOrientation(event) {
    
   
   //var xx =  WIDTH*(x/180)
-  var xx = WIDTH*(x+180)/360
+  var yy = WIDTH*(y+180)/360
   //var yy =  HEIGHT*(y/90)
   // event.clientX = [0,WIDTH]
-   speed = (1 - (xx / WIDTH) * 2) * 2
+   speed = (1 - (yy / WIDTH) * 2) * 2
     tl.timeScale(speed);
     tl2.timeScale(speed);
     tl3.timeScale(speed);

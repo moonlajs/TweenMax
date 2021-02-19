@@ -200,7 +200,7 @@ function handleOrientation(event) {
     tl5.timeScale(speed);
 	  
   output.textContent  = `alpha : ${z}\n`;
-  output.textContent  = `beta : ${x}\n`;
+  output.textContent  += `beta : ${x}\n`;
   output.textContent += `gamma: ${y}\n`;
 }
 window.addEventListener('deviceorientation', handleOrientation);
